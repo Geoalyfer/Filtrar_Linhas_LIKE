@@ -1,0 +1,30 @@
+O operador LIKE serve para filtrar dados deinidos por linhas da coluna
+
+Por exemplo, queremos filtrar todas as palavras que tem a letra F.
+
+NOs bancos de dadados SQL o conteúdo dentro de aspas duplas '' sao CASE SENSITIVES.
+
+O caracter % é um white card e serve para executar o filtro de qualquer caracter.
+
+  SELECT *
+	FROM produto
+WHERE descricao_produto LIKE 'F%'
+
+O resultado é o filtro de paavras que iniciam com a letra F maiuscula:
+  codigo_produto  descricao_produto 
+1	10009	          Ferro de passar
+2	10010	          Fritadeira elétrica
+3	10013	          Fogão 
+
+SELECT *
+	FROM produto
+WHERE descricao_produto LIKE '%ão%'
+
+O % pode ser usado em qualquer posição da pesquisa.
+
+SELECT *
+	FROM produto
+WHERE descricao_produto NOT LIKE '%o'
+
+O NOT pode ser combinado com o LIKE para a busca invertida.
+
